@@ -4,8 +4,11 @@ require('dotenv').config();
 const {connection}=require("./Config/db");
 const {UserRouter}=require("./Router/User")
 const {ResturantRouter}=require("./Router/resurant");
-
 app.use(express.json());
+app.get("/",(req,res)=>{
+    res.send("deployed succefull")
+})
+
 app.use(UserRouter);
 app.use(ResturantRouter);
 
